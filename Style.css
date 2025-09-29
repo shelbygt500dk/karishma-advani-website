@@ -1,0 +1,278 @@
+/* Base Colors */
+:root {
+  --text: #121212;
+  --background: #E3E3E3;
+  --accent: #FF4EB6;
+  --callout: #FF9A3E;
+  --bubble: #00B2A9;
+  --quote: #B480E8;
+  --button: #D726A3;
+  --button-hover: #A020F0;
+  --link: #3EC1FF;
+  --link-hover: #007C91;
+  --footer-bg: #2E2E2E;
+  --footer-text: #CCCCCC;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  color: var(--text);
+  background-color: var(--background);
+  line-height: 1.6;
+}
+
+.brand-logo {
+  max-width: 100%;
+  height: auto;
+  max-height: 120px;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 0;
+}
+
+#about-brand {
+  padding-bottom: 1rem;
+}
+
+#about-coach {
+  padding-top: 1rem;
+}
+
+.light-bg {
+  background-color: #f7f7f7;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(to right, var(--accent), var(--callout));
+  color: white;
+  text-align: center;
+  padding: 6rem 2rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero .btn-primary {
+  margin-top: 1.5rem;
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--button);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  background-color: var(--button-hover);
+}
+
+/* About Coach */
+.about-coach {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.about-coach .image-placeholder {
+  flex: 1;
+  min-height: 250px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-coach .text {
+  flex: 2;
+}
+
+/* Steps */
+.steps {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.step {
+  background-color: var(--bubble);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+}
+
+/* Testimonials */
+blockquote {
+  background-color: var(--quote);
+  color: white;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 5px;
+}
+
+/* Blog/Videos */
+.content-cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  flex: 1;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 5px;
+  min-height: 150px;
+  text-align: center;
+}
+
+/* Instagram */
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.insta-post {
+  background-color: #ccc;
+  height: 150px;
+}
+
+/* Contact */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.75rem;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Accordion */
+.accordion-button {
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 1rem 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid #ddd;
+  transition: color 0.3s ease;
+}
+
+.accordion-button:hover {
+  color: var(--button);
+}
+
+.accordion-button:focus {
+  outline: 2px solid var(--button);
+  outline-offset: 2px;
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 1.25rem;
+  color: var(--button);
+}
+
+/* Rotate arrow when active/open */
+.accordion-button[aria-expanded="true"] .arrow {
+  transform: rotate(180deg);
+}
+
+/* Accordion Content */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+  padding-left: 1rem;
+  color: #444;
+}
+
+/* When content is open */
+.accordion-content.open {
+  max-height: 200px; /* Adjust as needed */
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+.footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  text-align: center;
+  padding: 2rem;
+}
+
+.footer a {
+  color: var(--footer-text);
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  /* Stack about-coach sections vertically */
+  .about-coach {
+    flex-direction: column;
+  }
+
+  /* Make images and text full width */
+  .about-coach .image-placeholder,
+  .about-coach .text {
+    flex: 1 1 100%;
+  }
+
+  /* Reduce container padding */
+  .container {
+    padding: 1rem;
+  }
+
+  /* Content cards stack vertically */
+  .content-cards {
+    flex-direction: column;
+  }
+
+  /* Steps stack vertically */
+  .steps {
+    flex-direction: column;
+  }
+
+  /* Instagram grid adjust */
+  .insta-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
